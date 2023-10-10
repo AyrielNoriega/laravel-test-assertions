@@ -546,5 +546,19 @@
             "\\$response->assertInvalid(['$${1:key}' => '$${2:message}']);"
         ],
         "description": "Assert that a specific key has a validation error message"
-    }
+    },
+    "Assert Unauthorized Access": {
+        "prefix": "assertUnauthorizedAccess",
+        "body": [
+            "\\$response->assertUnauthorized();"
+        ],
+        "description": "Assert that the response indicates unauthorized access (401)"
+    },
+    "Assert Redirect To": {
+        "prefix": "assertRedirectTo",
+        "body": [
+            "\\$response->assertRedirect('$${1:uri}');"
+        ],
+        "description": "Assert that the response redirects to a specific URI"
+    },
 }
