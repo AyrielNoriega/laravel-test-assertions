@@ -1,1 +1,550 @@
-{}
+{
+    "Assert Bad Request": {
+        "prefix": ["assertBadRequest", "assert"],
+        "body": [
+            "\\$response->assertStatus(400);"
+        ],
+        "description": "Assert that the response has a bad request (400) HTTP status code"
+    },
+    "Assert Accepted": {
+        "prefix": ["assertAccepted", "assert"],
+        "body": [
+            "\\$response->assertStatus(202);"
+        ],
+        "description": "Assert that the response has an accepted (202) HTTP status code"
+    },
+    "Assert Conflict": {
+        "prefix": ["assertConflict", "assert"],
+        "body": [
+            "\\$response->assertStatus(409);"
+        ],
+        "description": "Assert that the response has a conflict (409) HTTP status code"
+    },
+    "Assert Cookie": {
+        "prefix": ["assertCookie", "assert"],
+        "body": [
+            "\\$response->assertCookie(${1:cookieName}, ${2:value} = null);"
+        ],
+        "description": "Assert that the response contains the given cookie"
+    },
+    "Assert Cookie Expired": {
+        "prefix": ["assertCookieExpired", "assert"],
+        "body": [
+            "\\$response->assertCookieExpired(${1:cookieName});"
+        ],
+        "description": "Assert that the response contains the given cookie and it is expired"
+    },
+    "Assert Cookie Not Expired": {
+        "prefix": ["assertCookieNotExpired", "assert"],
+        "body": [
+            "\\$response->assertCookieNotExpired(${1:cookieName});"
+        ],
+        "description": "Assert that the response contains the given cookie and it is not expired"
+    },
+    "Assert Cookie Missing": {
+        "prefix": ["assertCookieMissing", "assert"],
+        "body": [
+            "\\$response->assertCookieMissing(${1:cookieName});"
+        ],
+        "description": "Assert that the response does not contain the given cookie"
+    },
+    "Assert Created": {
+        "prefix": ["assertCreated", "assert"],
+        "body": [
+            "\\$response->assertStatus(201);"
+        ],
+        "description": "Assert that the response has a 201 HTTP status code"
+    },
+    "Assert Dont See": {
+        "prefix": ["assertDontSee", "assert"],
+        "body": [
+            "\\$response->assertDontSee(${1:value}, ${2:true});"
+        ],
+        "description": "Assert that the given string is not contained within the response returned by the application. This assertion will automatically escape the given string unless you pass a second argument of false"
+    },
+    "Assert Dont See Text": {
+        "prefix": ["assertDontSeeText", "assert"],
+        "body": [
+            "\\$response->assertDontSeeText(${1:value}, ${2:true});"
+        ],
+        "description": "Assert that the given string is not contained within the response text. This assertion will automatically escape the given string unless you pass a second argument of false. This method will pass the response content to the strip_tags PHP function before making the assertion"
+    },
+    "Assert Download": {
+        "prefix": ["assertDownload", "assert"],
+        "body": [
+            "\\$response->assertDownload(${1:null});"
+        ],
+        "description": "Assert that the response is a \"download\". Typically, this means the invoked route that returned the response returned a Response::download response, BinaryFileResponse, or Storage::download response"
+    },
+    "Assert ExactJson": {
+        "prefix": ["assertExactJson", "assert"],
+        "body": [
+            "\\$response->assertExactJson(${1:[]});"
+        ],
+        "description": "Assert that the response contains an exact match of the given JSON data"
+    },
+    "Assert Forbidden": {
+        "prefix": ["assertForbidden", "assert"],
+        "body": [
+            "\\$response->assertForbidden();"
+        ],
+        "description": "Assert that the response has a forbidden (403) HTTP status code"
+    },
+    "Assert Found": {
+        "prefix": ["assertFound", "assert"],
+        "body": [
+            "\\$response->assertFound();"
+        ],
+        "description": "Assert that the response has a found (302) HTTP status code"
+    },
+    "Assert Gone": {
+        "prefix": ["assertGone", "assert"],
+        "body": [
+            "\\$response->assertGone();"
+        ],
+        "description": "Assert that the response has a gone (410) HTTP status code"
+    },
+    "Assert Header": {
+        "prefix": ["assertHeader", "assert"],
+        "body": [
+            "\\$response->assertHeader(${1:headerName}, ${2:null});"
+        ],
+        "description": "Assert that the given header and value is present on the response"
+    },
+    "Assert Header Missing": {
+        "prefix": ["assertHeaderMissing", "assert"],
+        "body": [
+            "\\$response->assertHeaderMissing(${1:headerName});"
+        ],
+        "description": "Assert that the given header is not present on the response"
+    },
+    "Assert InternalServerError": {
+        "prefix": ["assertInternalServerError", "assert"],
+        "body": [
+            "\\$response->assertStatus(500);"
+        ],
+        "description": "Assert that the response has an \"Internal Server Error\" (500) HTTP status code"
+    },
+    "Assert Json": {
+        "prefix": ["assertJson", "assert"],
+        "body": [
+            "\\$response->assertJson(${1:[]}, ${2:false});"
+        ],
+        "description": "Assert that the response contains the given JSON data"
+    },
+    "Assert JsonCount": {
+        "prefix": ["assertJsonCount", "assert"],
+        "body": [
+            "\\$response->assertJsonCount(${1:count}, ${2:null});"
+        ],
+        "description": "Assert that the response JSON has an array with the expected number of items at the given key"
+    },
+    "Assert JsonFragment": {
+        "prefix": ["assertJsonFragment", "assert"],
+        "body": [
+            "\\$response->assertJsonFragment(${1:[]});"
+        ],
+        "description": "Assert that the response contains the given JSON data anywhere in the response"
+    },
+    "Assert JsonIsArray": {
+        "prefix": ["assertJsonIsArray", "assert"],
+        "body": [
+            "\\$response->assertJsonIsArray();"
+        ],
+        "description": "Assert that the response JSON is an array"
+    },
+    "Assert JsonIsObject": {
+        "prefix": ["assertJsonIsObject", "assert"],
+        "body": [
+            "\\$response->assertJsonIsObject();"
+        ],
+        "description": "Assert that the response JSON is an object"
+    },
+    "Assert JsonMissing": {
+        "prefix": ["assertJsonMissing", "assert"],
+        "body": [
+            "\\$response->assertJsonMissing(${1:[]});"
+        ],
+        "description": "Assert that the response does not contain the given JSON data"
+    },
+    "Assert JsonMissingExact": {
+        "prefix": ["assertJsonMissingExact", "assert"],
+        "body": [
+            "\\$response->assertJsonMissingExact(${1:[]});"
+        ],
+        "description": "Assert that the response does not contain the exact JSON data"
+    },
+    "Assert JsonMissingValidationErrors": {
+        "prefix": ["assertJsonMissingValidationErrors", "assert"],
+        "body": [
+            "\\$response->assertJsonMissingValidationErrors(${1:[]});"
+        ],
+        "description": "Assert that the response has no JSON validation errors for the given keys"
+    },
+    "Assert JsonPath": {
+        "prefix": ["assertJsonPath", "assert"],
+        "body": [
+            "\\$response->assertJsonPath(${1:path}, ${2:null});"
+        ],
+        "description": "Assert that the response contains the given data at the specified path"
+    },
+    "Assert JsonMissingPath": {
+        "prefix": ["assertJsonMissingPath", "assert"],
+        "body": [
+            "\\$response->assertJsonMissingPath(${1:path});"
+        ],
+        "description": "Assert that the response does not contain the given path"
+    },
+    "Assert Json Structure": {
+        "prefix": ["assertJsonStructure", "assert"],
+        "body": [
+            "\\$response->assertJsonStructure(${1:[]});"
+        ],
+        "description": "Assert that the response has a given JSON structure"
+    },
+    "Assert Json Validation Errors": {
+        "prefix": ["assertJsonValidationErrors", "assert"],
+        "body": [
+            "\\$response->assertJsonValidationErrors(${1:[]}, ${2:'errors'});"
+        ],
+        "description": "Assert that the response has the given JSON validation errors for the given keys. This method should be used when asserting against responses where the validation errors are returned as a JSON structure instead of being flashed to the session"
+    },
+    "Assert Json Validation Error For": {
+        "prefix": ["assertJsonValidationErrorFor", "assert"],
+        "body": [
+            "\\$response->assertJsonValidationErrorFor(${1:key}, ${2:'errors'});"
+        ],
+        "description": "Assert the response has any JSON validation errors for the given key"
+    },
+    "Assert Method Not Allowed": {
+        "prefix": ["assertMethodNotAllowed", "assert"],
+        "body": [
+            "\\$response->assertMethodNotAllowed();"
+        ],
+        "description": "Assert that the response has a method not allowed (405) HTTP status code"
+    },
+    "Assert Moved Permanently": {
+        "prefix": ["assertMovedPermanently", "assert"],
+        "body": [
+            "\\$response->assertMovedPermanently();"
+        ],
+        "description": "Assert that the response has a moved permanently (301) HTTP status code"
+    },
+    "Assert Location": {
+        "prefix": ["assertLocation", "assert"],
+        "body": [
+            "\\$response->assertLocation(${1:uri});"
+        ],
+        "description": "Assert that the response has the given URI value in the Location header"
+    },
+    "Assert Content": {
+        "prefix": ["assertContent", "assert"],
+        "body": [
+            "\\$response->assertContent(${1:value});"
+        ],
+        "description": "Assert that the given string matches the response content"
+    },
+    "Assert No Content": {
+        "prefix": ["assertNoContent", "assert"],
+        "body": [
+            "\\$response->assertNoContent(${1:status = 204});"
+        ],
+        "description": "Assert that the response has the given HTTP status code and no content"
+    },
+    "Assert Streamed Content": {
+        "prefix": ["assertStreamedContent", "assert"],
+        "body": [
+            "\\$response->assertStreamedContent(${1:value});"
+        ],
+        "description": "Assert that the given string matches the streamed response content"
+    },
+    "Assert Not Found": {
+        "prefix": ["assertNotFound", "assert"],
+        "body": [
+            "\\$response->assertNotFound();"
+        ],
+        "description": "Assert that the response has a not found (404) HTTP status code"
+    },
+    "Assert Ok": {
+        "prefix": ["assertOk", "assert"],
+        "body": [
+            "\\$response->assertOk();"
+        ],
+        "description": "Assert that the response has a 200 HTTP status code"
+    },
+    "Assert Payment Required": {
+        "prefix": ["assertPaymentRequired", "assert"],
+        "body": [
+            "\\$response->assertPaymentRequired();"
+        ],
+        "description": "Assert that the response has a payment required (402) HTTP status code"
+    },
+
+    "Assert Plain Cookie": {
+        "prefix": ["assertPlainCookie", "assert"],
+        "body": [
+            "\\$response->assertPlainCookie($${1:cookieName}, $${2:value} = null);"
+        ],
+        "description": "Assert that the response contains the given unencrypted cookie"
+    },
+    "Assert Redirect": {
+        "prefix": ["assertRedirect", "assert"],
+        "body": [
+            "\\$response->assertRedirect($${1:uri} = null);"
+        ],
+        "description": "Assert that the response is a redirect to the given URI"
+    },
+    "Assert Redirect Contains": {
+        "prefix": ["assertRedirectContains", "assert"],
+        "body": [
+            "\\$response->assertRedirectContains($${1:string});"
+        ],
+        "description": "Assert whether the response is redirecting to a URI that contains the given string"
+    },
+    "Assert Redirect To Route": {
+        "prefix": ["assertRedirectToRoute", "assert"],
+        "body": [
+            "\\$response->assertRedirectToRoute($${1:name}, $${2:parameters} = []);"
+        ],
+        "description": "Assert that the response is a redirect to the given named route"
+    },
+    "Assert Redirect To Signed Route": {
+        "prefix": ["assertRedirectToSignedRoute", "assert"],
+        "body": [
+            "\\$response->assertRedirectToSignedRoute($${1:name} = null, $${2:parameters} = []);"
+        ],
+        "description": "Assert that the response is a redirect to the given signed route"
+    },
+    "Assert Request Timeout": {
+        "prefix": ["assertRequestTimeout", "assert"],
+        "body": [
+            "\\$response->assertRequestTimeout();"
+        ],
+        "description": "Assert that the response has a request timeout (408) HTTP status code"
+    },
+    "Assert See": {
+        "prefix": ["assertSee", "assert"],
+        "body": [
+            "\\$response->assertSee($${1:value}, $${2:true});"
+        ],
+        "description": "Assert that the given string is contained within the response"
+    },
+    "Assert See In Order": {
+        "prefix": ["assertSeeInOrder", "assert"],
+        "body": [
+            "\\$response->assertSeeInOrder($${1:array}, $${2:true});"
+        ],
+        "description": "Assert that the given strings are contained in order within the response"
+    },
+    "Assert See Text": {
+        "prefix": ["assertSeeText", "assert"],
+        "body": [
+            "\\$response->assertSeeText($${1:value}, $${2:true});"
+        ],
+        "description": "Assert that the given string is contained within the response text"
+    },
+    "Assert See Text In Order": {
+        "prefix": ["assertSeeTextInOrder", "assert"],
+        "body": [
+            "\\$response->assertSeeTextInOrder($${1:array}, $${2:true});"
+        ],
+        "description": "Assert that the given strings are contained in order within the response text"
+    },
+    "Assert Server Error": {
+        "prefix": ["assertServerError", "assert"],
+        "body": [
+            "\\$response->assertServerError();"
+        ],
+        "description": "Assert that the response has a server error (>= 500, < 600) HTTP status code"
+    },
+    "Assert Service Unavailable": {
+        "prefix": ["assertServiceUnavailable", "assert"],
+        "body": [
+            "\\$response->assertServiceUnavailable();"
+        ],
+        "description": "Assert that the response has a 'Service Unavailable' (503) HTTP status code"
+    },
+    "Assert Session Has": {
+        "prefix": ["assertSessionHas", "assert"],
+        "body": [
+            "\\$response->assertSessionHas($${1:key}, $${2:null});"
+        ],
+        "description": "Assert that the session contains the given piece of data"
+    },
+    "Assert Session Has Input": {
+        "prefix": ["assertSessionHasInput", "assert"],
+        "body": [
+            "\\$response->assertSessionHasInput($${1:key}, $${2:null});"
+        ],
+        "description": "Assert that the session has a given value in the flashed input array"
+    },
+    "Assert Session Has All": {
+        "prefix": ["assertSessionHasAll", "assert"],
+        "body": [
+            "\\$response->assertSessionHasAll($${1:array});"
+        ],
+        "description": "Assert that the session contains a given array of key / value pairs"
+    },
+    "Assert Session Has Errors": {
+        "prefix": ["assertSessionHasErrors", "assert"],
+        "body": [
+            "\\$response->assertSessionHasErrors($${1:array}, $${2:null}, $${3:'default'});"
+        ],
+        "description": "Assert that the session contains an error for the given keys"
+    },
+    "Assert Session Has Errors In": {
+        "prefix": ["assertSessionHasErrorsIn", "assert"],
+        "body": [
+            "\\$response->assertSessionHasErrorsIn($${1:errorBag}, $${2:array}, $${3:null});"
+        ],
+        "description": "Assert that the session contains an error for the given keys within a specific error bag"
+    },
+    "Assert Session Has No Errors": {
+        "prefix": ["assertSessionHasNoErrors", "assert"],
+        "body": [
+            "\\$response->assertSessionHasNoErrors();"
+        ],
+        "description": "Assert that the session has no validation errors"
+    },
+    "Assert Session Doesnt Have Errors": {
+        "prefix": ["assertSessionDoesntHaveErrors", "assert"],
+        "body": [
+            "\\$response->assertSessionDoesntHaveErrors($${1:array}, $${2:null}, $${3:'default'});"
+        ],
+        "description": "Assert that the session has no validation errors for the given keys"
+    },
+    "Assert Session Missing": {
+        "prefix": ["assertSessionMissing", "assert"],
+        "body": [
+            "\\$response->assertSessionMissing($${1:key});"
+        ],
+        "description": "Assert that the session does not contain the given key"
+    },
+    "Assert Status": {
+        "prefix": ["assertStatus", "assert"],
+        "body": [
+            "\\$response->assertStatus($${1:code});"
+        ],
+        "description": "Assert that the response has a given HTTP status code"
+    },
+    "Assert Successful": {
+        "prefix": ["assertSuccessful", "assert"],
+        "body": [
+            "\\$response->assertSuccessful();"
+        ],
+        "description": "Assert that the response has a successful (>= 200 and < 300) HTTP status code"
+    },
+    "Assert Too Many Requests": {
+        "prefix": ["assertTooManyRequests", "assert"],
+        "body": [
+            "\\$response->assertTooManyRequests();"
+        ],
+        "description": "Assert that the response has a too many requests (429) HTTP status code"
+    },
+    "Assert Unauthorized": {
+        "prefix": ["assertUnauthorized", "assert"],
+        "body": [
+            "\\$response->assertUnauthorized();"
+        ],
+        "description": "Assert that the response has an unauthorized (401) HTTP status code"
+    },
+    "Assert Unprocessable": {
+        "prefix": ["assertUnprocessable", "assert"],
+        "body": [
+            "\\$response->assertUnprocessable();"
+        ],
+        "description": "Assert that the response has an unprocessable entity (422) HTTP status code"
+    },
+    "Assert Unsupported Media Type": {
+        "prefix": ["assertUnsupportedMediaType", "assert"],
+        "body": [
+            "\\$response->assertUnsupportedMediaType();"
+        ],
+        "description": "Assert that the response has an unsupported media type (415) HTTP status code"
+    },
+    "Assert Valid": {
+        "prefix": ["assertValid", "assert"],
+        "body": [
+            "\\$response->assertValid($${1:[]});"
+        ],
+        "description": "Assert that the response has no validation errors for the given keys"
+    },
+    "Assert Invalid": {
+        "prefix": ["assertInvalid", "assert"],
+        "body": [
+            "\\$response->assertInvalid($${1:[]});"
+        ],
+        "description": "Assert that the response has validation errors for the given keys"
+    },
+    "Assert View Has": {
+        "prefix": ["assertViewHas", "assert"],
+        "body": [
+            "\\$response->assertViewHas($${1:key}, $${2:null});"
+        ],
+        "description": "Assert that the response view contains a given piece of data"
+    },
+    "Assert View Has All": {
+        "prefix": ["assertViewHasAll", "assert"],
+        "body": [
+            "\\$response->assertViewHasAll($${1:[]});"
+        ],
+        "description": "Assert that the response view has a given list of data"
+    },
+    "Assert View Is": {
+        "prefix": ["assertViewIs", "assert"],
+        "body": [
+            "\\$response->assertViewIs($${1:value});"
+        ],
+        "description": "Assert that the given view was returned by the route"
+    },
+    "Assert View Missing": {
+        "prefix": ["assertViewMissing", "assert"],
+        "body": [
+            "\\$response->assertViewMissing($${1:key});"
+        ],
+        "description": "Assert that the given data key was not made available to the view returned in the application's response"
+    },
+    "Assert Authenticated": {
+        "prefix": ["assertAuthenticated", "assert"],
+        "body": [
+            "\\$this->assertAuthenticated($${1:null});"
+        ],
+        "description": "Assert that a user is authenticated"
+    },
+    "Assert Guest": {
+        "prefix": ["assertGuest", "assert"],
+        "body": [
+            "\\$this->assertGuest($${1:null});"
+        ],
+        "description": "Assert that a user is not authenticated"
+    },
+    "Assert Authenticated As": {
+        "prefix": ["assertAuthenticatedAs", "assert"],
+        "body": [
+            "\\$this->assertAuthenticatedAs($${1:user}, $${2:null});"
+        ],
+        "description": "Assert that a specific user is authenticated"
+    },
+
+    "Assert Valid": {
+        "prefix": ["assertValid", "assert"],
+        "body": [
+            "\\$response->assertValid($${1:[]});"
+        ],
+        "description": "Assert that the response has no validation errors for the given keys"
+    },
+    "Assert Invalid": {
+        "prefix": ["assertInvalid", "assert"],
+        "body": [
+            "\\$response->assertInvalid($${1:[]});"
+        ],
+        "description": "Assert that the response has validation errors for the given keys"
+    },
+    "Assert Invalid Key": {
+        "prefix": ["assertInvalidKey", "assert"],
+        "body": [
+            "\\$response->assertInvalid(['$${1:key}' => '$${2:message}']);"
+        ],
+        "description": "Assert that a specific key has a validation error message"
+    }
+}
