@@ -1,0 +1,20 @@
+{
+  "name": "laravel-test-assertions",
+  "displayName": "laravel-test-assertions",
+  "description": "easy assertions in laravel test",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.83.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "php",
+        "path": "./snippets/snippets.code-snippets"
+      }
+    ]
+  }
+}
